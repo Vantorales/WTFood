@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login y Registro</title>
+
+        <link rel="stylesheet" href="/css/estiloLoginRegistro.css" type="text/css"/>
+
+    </head>
+
+
+    <body>
+        <p th:if="${Error != null }" th:text="${Error}" style="color: red;"></p>
+        <p th:if="${Exito != null }" th:text="${Exito}" style="color: yellow;"></p>
+        <main>
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+
+                        <h3>¿Ya tienes una cuenta?</h3>
+
+                        <p>Inicia sesión para entrar</p>
+
+                        <button id="btn__iniciar-sesion"> Iniciar Sesión</button>
+
+
+                    </div>
+
+                    <div class="caja__trasera-registro">
+
+                        <h3>¿Aún no tienes cuenta?</h3>
+
+                        <p>Registrate para iniciar sesión</p>
+
+                        <button id="btn__registrarse"> Registrarse</button>
+
+                    </div>
+                </div>
+
+
+                <!-- Formulario de Login y Registro -->
+                <div class="contenedor__login-registro">
+
+                    <!-- Login -->
+
+
+
+                    <form  method="POST" action="/logincheck" enctype="multipart/form-data" class="formulario__login">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" name="email" placeholder="Correo electrónico">
+                        <input type="password" name="clave" placeholder="Contraseña">
+                        <button>Entrar</button>
+
+                    </form>
+                    <!-- Registro -->
+                    <form method="POST" action="/usuario/registro" enctype="multipart/form-data" class="formulario__registro">
+
+                        <h2>Registrarse</h2>
+
+                        <input type="text" name="nombre" placeholder="Nombre">
+                        <input type="text" name="apellido" placeholder="Apellido">
+                        <input type="text" name="email" placeholder="Correo electrónico">
+                        <input type="text" name="nickname" placeholder="NickName">
+                        <input type="password" name="clave" placeholder="Contraseña">
+                        <button>Registrarse</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <script src="/script.js"></script>
+    </body>
+
+</html>
