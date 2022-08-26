@@ -8,10 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PortalControlador {
     
+    
      @GetMapping("/")
     public String index() {
-        return "index.html";
+        return "index";
     }
+    
+        @GetMapping("/loginRegistro")
+    public String loginRegistro() {
+        return "loginRegistro";
+    }
+    
+     
     
 }
 
